@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "experience": "Experiência",
+    "stack": "Stack",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "available": "Disponível para oportunidades",
+    "roles": ["Desenvolvedor React", "Desenvolvedor Node.js", "Desenvolvedor TypeScript", "Desenvolvedor Full Stack"],
+    "bio": "Full Stack com 2+ anos de experiência em NestJS, React e TypeScript. Especializado em arquitetura hexagonal, CQRS e sistemas escaláveis que entregam valor real.",
+    "cta": "Ver projetos",
+    "ctaSecondary": "Entrar em contato",
+    "years": "Anos de exp.",
+    "projects": "Projetos",
+    "coverage": "Cobertura de testes",
+    "scrollHint": "Role para baixo"
+  },
+  "experience": {
+    "label": "TRAJETÓRIA",
+    "title": "Experiência profissional"
+  },
+  "stack": {
+    "label": "FERRAMENTAS",
+    "title": "A oficina, arrumada",
+    "subtitle": "Tecnologias que uso diariamente em produção — escolhidas pelo que entregam, não pela última moda.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Bancos de Dados",
+      "devops": "DevOps / Testes"
+    }
+  },
+  "projects": {
+    "label": "PORTFÓLIO",
+    "title": "Projetos em destaque",
+    "subtitle": "Do problema à solução — cada projeto com decisões reais de arquitetura e produto.",
+    "viewCode": "Ver código",
+    "viewDemo": "Demo"
+  },
+  "contact": {
+    "label": "CONTATO",
+    "title": "Tem um projeto em mente?",
+    "description": "Disponível para posições full stack e oportunidades remotas. A forma mais rápida é pelo LinkedIn ou e-mail.",
+    "cta": "Entrar em contato"
+  }
+}
