@@ -1,6 +1,6 @@
 # Portfolio — João Guilherme Santos Oliveira
 
-**Live:** [portfolio-blue-five-30.vercel.app](https://portfolio-blue-five-30.vercel.app/pt)
+**Live:** [joaoguilherme.website/pt](https://joaoguilherme.website/pt)
 
 Portfolio pessoal desenvolvido com Next.js 16, Tailwind CSS v4 e next-intl. Apresenta experiência profissional, projetos, stack técnica e informações de contato.
 

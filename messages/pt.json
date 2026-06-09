@@ -20,7 +20,34 @@
   },
   "experience": {
     "label": "TRAJETÓRIA",
-    "title": "Experiência profissional"
+    "title": "Experiência profissional",
+    "current": "ATUALMENTE",
+    "items": {
+      "vnova": {
+        "role": "Desenvolvedor Full Stack",
+        "period": "Nov/2025 — Atual",
+        "location": "Remoto",
+        "description": "Construção de APIs REST escaláveis com NestJS em arquitetura hexagonal, aplicando Clean Architecture e separação de responsabilidades. Implementação de CQRS e Domain Events com publicação assíncrona via RabbitMQ, garantindo consistência eventual entre serviços. Autenticação completa com JWT, guards, roles e permissões granulares. Modelagem relacional com PostgreSQL via Prisma, cache com Redis e transações atômicas. Observabilidade com OpenTelemetry propagando correlationId ponta a ponta. Testes com Vitest, Testing Library, MSW e Playwright E2E com cobertura acima de 80%."
+      },
+      "evolutionsoft": {
+        "role": "Desenvolvedor Frontend",
+        "period": "Mai/2025 — Nov/2025",
+        "location": "Itapetininga, SP · Híbrido",
+        "description": "Desenvolvimento de interfaces modernas e responsivas com React.js, Next.js, TypeScript e Tailwind CSS, priorizando acessibilidade e consistência visual. Gerenciamento de estado avançado com Zustand, Context API e React Query. Manutenção de aplicações Angular e React Native, corrigindo inconsistências entre iOS e Android. Transformação de protótipos Figma em componentes reutilizáveis com foco em UI/UX. Integração com APIs REST com tratamento de erros e otimização de chamadas assíncronas."
+      },
+      "itaacos": {
+        "role": "Desenvolvedor Full Stack",
+        "period": "Mar/2024 — Mai/2025",
+        "location": "Itapetininga, SP · Presencial",
+        "description": "Desenvolvimento de sistema de inventário com geração de QR codes e integração com MySQL. Otimização de queries SQL reduzindo tempo de resposta em até 40% via indexação e refatoração. Implementação de sistema de controle de cronograma de produção de colunas de ferro, automatizando gestão de orçamentos. Integração de APIs externas e administração de servidor Linux. Automação de processos internos com JavaScript, jQuery e PHP, aumentando produtividade da equipe."
+      },
+      "fatec": {
+        "role": "Monitor de Linguagem de Programação",
+        "period": "Ago/2022 — Dez/2022",
+        "location": "Presencial · Voluntário",
+        "description": "Apoio a colegas com dificuldades em lógica de programação, orientação a objetos e boas práticas de escrita de código."
+      }
+    }
   },
   "stack": {
     "label": "FERRAMENTAS",
@@ -38,7 +65,26 @@
     "title": "Projetos em destaque",
     "subtitle": "Do problema à solução — cada projeto com decisões reais de arquitetura e produto.",
     "viewCode": "Ver código",
-    "viewDemo": "Demo"
+    "viewDemo": "Demo",
+    "featured": "destaque",
+    "items": {
+      "verdeo": {
+        "subtitle": "Ecossistema de Microserviços",
+        "description": "Estudo arquitetural de um ecossistema de microserviços com comunicação síncrona (HTTP/BFF) e assíncrona (RabbitMQ), consistência eventual via Saga Pattern e mecanismos de compensação. Isolamento de domínio com arquitetura hexagonal e tratamento explícito de erros com Result Type."
+      },
+      "ezmotoflow": {
+        "subtitle": "Sistema de Gestão de Vendas de Motos",
+        "description": "Sistema completo de gestão de vendas com autenticação por perfil, controle de estoque e deploy em produção. Design system com Shadcn/UI e Tailwind garantindo consistência visual. API REST com NestJS e PostgreSQL na nuvem, desenvolvido de ponta a ponta."
+      },
+      "kanban": {
+        "subtitle": "Gerenciador de Tarefas",
+        "description": "Gerenciador de tarefas com interface drag-and-drop, formulários validados com Zod e integração com API via Axios. Backend com NestJS + Fastify, containerização completa com Docker e PostgreSQL."
+      },
+      "blogger": {
+        "subtitle": "Plataforma de Blog com Testes Automatizados",
+        "description": "Plataforma de blog desenvolvida como projeto de treinamento com foco em consolidar boas práticas de construção de interfaces e arquitetura de APIs. Cobre o ciclo completo de uma aplicação real: autenticação de usuários, CRUD de posts, estilização com Styled Components e testes unitários e de integração com Jest."
+      }
+    }
   },
   "contact": {
     "label": "CONTATO",

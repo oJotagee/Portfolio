@@ -28,24 +28,24 @@ export default function Experience() {
                       {exp.current && (
                         <span className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-green-800 bg-green-950/50 px-2.5 py-0.5 text-xs font-medium text-green-400">
                           <span className="h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse" />
-                          ATUALMENTE
+                          {t("current")}
                         </span>
                       )}
                       <h3 className="mt-1 text-xl font-bold text-white dark:text-white">
                         {exp.company}
                       </h3>
                       <p className="text-sm font-medium text-orange-400">
-                        {exp.role}
+                        {t(`items.${exp.key}.role`)}
                       </p>
-                      <p className="mt-0.5 text-xs text-zinc-500">{exp.location}</p>
+                      <p className="mt-0.5 text-xs text-zinc-500">{t(`items.${exp.key}.location`)}</p>
                     </div>
                     <span className="rounded-full border border-zinc-700 px-3 py-1 text-xs text-zinc-400 whitespace-nowrap">
-                      {exp.period}
+                      {t(`items.${exp.key}.period`)}
                     </span>
                   </div>
 
                   <p className="mb-4 text-sm leading-relaxed text-zinc-400">
-                    {exp.description}
+                    {t(`items.${exp.key}.description`)}
                   </p>
 
                   <div className="flex flex-wrap gap-2">

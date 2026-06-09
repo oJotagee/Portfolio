@@ -28,18 +28,18 @@ export default function Projects() {
                     {project.name}
                   </h3>
                   <p className="text-sm italic text-orange-400">
-                    {project.subtitle}
+                    {t(`items.${project.key}.subtitle`)}
                   </p>
                 </div>
                 {project.featured && (
                   <span className="shrink-0 rounded-full border border-orange-500/30 bg-orange-500/10 px-2 py-0.5 text-xs text-orange-400">
-                    destaque
+                    {t("featured")}
                   </span>
                 )}
               </div>
 
               <p className="mb-6 flex-1 text-sm leading-relaxed text-zinc-400">
-                {project.description}
+                {t(`items.${project.key}.description`)}
               </p>
 
               <div className="mb-4 flex flex-wrap gap-1.5">

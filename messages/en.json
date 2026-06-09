@@ -20,7 +20,34 @@
   },
   "experience": {
     "label": "TRAJECTORY",
-    "title": "Professional experience"
+    "title": "Professional experience",
+    "current": "CURRENT",
+    "items": {
+      "vnova": {
+        "role": "Full Stack Developer",
+        "period": "Nov/2025 — Present",
+        "location": "Remote",
+        "description": "Building scalable REST APIs with NestJS in hexagonal architecture, applying Clean Architecture and separation of concerns. Implementing CQRS and Domain Events with asynchronous publishing via RabbitMQ, ensuring eventual consistency between services. Full authentication with JWT, guards, roles and granular permissions. Relational modeling with PostgreSQL via Prisma, Redis caching and atomic transactions. Observability with OpenTelemetry propagating correlationId end-to-end. Testing with Vitest, Testing Library, MSW and Playwright E2E with over 80% coverage."
+      },
+      "evolutionsoft": {
+        "role": "Frontend Developer",
+        "period": "May/2025 — Nov/2025",
+        "location": "Itapetininga, SP · Hybrid",
+        "description": "Building modern and responsive interfaces with React.js, Next.js, TypeScript and Tailwind CSS, prioritizing accessibility and visual consistency. Advanced state management with Zustand, Context API and React Query. Maintaining Angular and React Native applications, fixing inconsistencies between iOS and Android. Transforming Figma prototypes into reusable components with a UI/UX focus. REST API integration with error handling and async call optimization."
+      },
+      "itaacos": {
+        "role": "Full Stack Developer",
+        "period": "Mar/2024 — May/2025",
+        "location": "Itapetininga, SP · On-site",
+        "description": "Developed an inventory system with QR code generation and MySQL integration. Optimized SQL queries reducing response time by up to 40% through indexing and refactoring. Implemented a production schedule control system for iron columns, automating budget management. Integrated external APIs and administered Linux servers. Automated internal processes with JavaScript, jQuery and PHP, increasing team productivity."
+      },
+      "fatec": {
+        "role": "Programming Language Teaching Assistant",
+        "period": "Aug/2022 — Dec/2022",
+        "location": "On-site · Volunteer",
+        "description": "Supported peers struggling with programming logic, object-oriented programming and code quality best practices."
+      }
+    }
   },
   "stack": {
     "label": "TOOLS",
@@ -38,7 +65,26 @@
     "title": "Featured projects",
     "subtitle": "From problem to solution — each project with real architecture and product decisions.",
     "viewCode": "View code",
-    "viewDemo": "Demo"
+    "viewDemo": "Demo",
+    "featured": "featured",
+    "items": {
+      "verdeo": {
+        "subtitle": "Microservices Ecosystem",
+        "description": "Architectural study of a microservices ecosystem with synchronous (HTTP/BFF) and asynchronous (RabbitMQ) communication, eventual consistency via Saga Pattern and compensation mechanisms. Domain isolation with hexagonal architecture and explicit error handling using Result Type."
+      },
+      "ezmotoflow": {
+        "subtitle": "Motorcycle Sales Management System",
+        "description": "Complete sales management system with profile-based authentication, inventory control and production deployment. Design system with Shadcn/UI and Tailwind ensuring visual consistency. REST API with NestJS and PostgreSQL in the cloud, built end-to-end."
+      },
+      "kanban": {
+        "subtitle": "Task Manager",
+        "description": "Task manager with drag-and-drop interface, forms validated with Zod and API integration via Axios. Backend with NestJS + Fastify, full containerization with Docker and PostgreSQL."
+      },
+      "blogger": {
+        "subtitle": "Blog Platform with Automated Testing",
+        "description": "Blog platform developed as a training project focused on consolidating best practices for building interfaces and API architecture. Covers the full cycle of a real application: user authentication, post CRUD, styling with Styled Components, and unit and integration testing with Jest."
+      }
+    }
   },
   "contact": {
     "label": "CONTACT",

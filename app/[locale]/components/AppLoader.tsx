@@ -7,37 +7,23 @@ export default function AppLoader() {
   const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
-    const startExit = () => {
-      const waitBeforeExit = window.setTimeout(() => {
-        setIsFading(true);
-      }, 450);
-
-      const removeLoader = window.setTimeout(() => {
-        setIsVisible(false);
-      }, 850);
-
-      return () => {
-        window.clearTimeout(waitBeforeExit);
-        window.clearTimeout(removeLoader);
-      };
-    };
-
-    if (document.readyState === "complete") {
-      const cleanup = startExit();
-      return cleanup;
+    if (sessionStorage.getItem("app-loaded")) {
+      setIsVisible(false);
+      return;
     }
 
-    let cleanupTimers: (() => void) | undefined;
+    const waitBeforeExit = window.setTimeout(() => {
+      setIsFading(true);
+    }, 450);
 
-    const onLoad = () => {
-      cleanupTimers = startExit();
-    };
-
-    window.addEventListener("load", onLoad, { once: true });
+    const removeLoader = window.setTimeout(() => {
+      sessionStorage.setItem("app-loaded", "1");
+      setIsVisible(false);
+    }, 850);
 
     return () => {
-      window.removeEventListener("load", onLoad);
-      if (cleanupTimers) cleanupTimers();
+      window.clearTimeout(waitBeforeExit);
+      window.clearTimeout(removeLoader);
     };
   }, []);
 
