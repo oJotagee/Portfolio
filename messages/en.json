@@ -40,12 +40,6 @@
         "period": "Mar/2024 — May/2025",
         "location": "Itapetininga, SP · On-site",
         "description": "Developed an inventory system with QR code generation and MySQL integration. Optimized SQL queries reducing response time by up to 40% through indexing and refactoring. Implemented a production schedule control system for iron columns, automating budget management. Integrated external APIs and administered Linux servers. Automated internal processes with JavaScript, jQuery and PHP, increasing team productivity."
-      },
-      "fatec": {
-        "role": "Programming Language Teaching Assistant",
-        "period": "Aug/2022 — Dec/2022",
-        "location": "On-site · Volunteer",
-        "description": "Supported peers struggling with programming logic, object-oriented programming and code quality best practices."
       }
     }
   },

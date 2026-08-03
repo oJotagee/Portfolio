@@ -40,12 +40,6 @@
         "period": "Mar/2024 — Mai/2025",
         "location": "Itapetininga, SP · Presencial",
         "description": "Desenvolvimento de sistema de inventário com geração de QR codes e integração com MySQL. Otimização de queries SQL reduzindo tempo de resposta em até 40% via indexação e refatoração. Implementação de sistema de controle de cronograma de produção de colunas de ferro, automatizando gestão de orçamentos. Integração de APIs externas e administração de servidor Linux. Automação de processos internos com JavaScript, jQuery e PHP, aumentando produtividade da equipe."
-      },
-      "fatec": {
-        "role": "Monitor de Linguagem de Programação",
-        "period": "Ago/2022 — Dez/2022",
-        "location": "Presencial · Voluntário",
-        "description": "Apoio a colegas com dificuldades em lógica de programação, orientação a objetos e boas práticas de escrita de código."
       }
     }
   },
