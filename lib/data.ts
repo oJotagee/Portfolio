@@ -32,14 +32,7 @@ export const experiences = [
     company: "Grupo Ita Aços",
     current: false,
     tags: ["PHP", "JavaScript", "jQuery", "MySQL", "Linux"],
-  },
-  {
-    id: 4,
-    key: "fatec",
-    company: "Fatec Itapetininga",
-    current: false,
-    tags: ["Teaching", "Programming Logic", "OOP"],
-  },
+  }
 ];
 
 export const projects = [
