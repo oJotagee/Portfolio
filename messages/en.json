@@ -61,6 +61,10 @@
     "viewCode": "View code",
     "viewDemo": "Demo",
     "featured": "featured",
+    "status": {
+      "in-progress": "in progress",
+      "paused": "paused"
+    },
     "items": {
       "verdeo": {
         "subtitle": "Microservices Ecosystem",
@@ -69,6 +73,14 @@
       "ezmotoflow": {
         "subtitle": "Motorcycle Sales Management System",
         "description": "Complete sales management system with profile-based authentication, inventory control and production deployment. Design system with Shadcn/UI and Tailwind ensuring visual consistency. REST API with NestJS and PostgreSQL in the cloud, built end-to-end."
+      },
+      "minifood": {
+        "subtitle": "Delivery Platform (Microservices)",
+        "description": "iFood-style delivery platform built as a microservices monorepo. Each business domain (catalog, orders, delivery) runs as an independent service behind a Kong API Gateway, with Keycloak as identity provider and RabbitMQ for async events. NestJS services on Bun runtime following Clean Architecture, PostgreSQL with one database per service."
+      },
+      "booktattoo": {
+        "subtitle": "Tattoo Studio Booking SaaS",
+        "description": "Micro-SaaS for tattoo studio scheduling: user registration/authentication and appointment booking, offered as a monthly subscription. Monorepo with Next.js frontend and NestJS services (user, appointment) backed by Prisma and PostgreSQL, with Strapi managing subscription plans."
       },
       "kanban": {
         "subtitle": "Task Manager",

@@ -61,6 +61,10 @@
     "viewCode": "Ver código",
     "viewDemo": "Demo",
     "featured": "destaque",
+    "status": {
+      "in-progress": "em andamento",
+      "paused": "pausado"
+    },
     "items": {
       "verdeo": {
         "subtitle": "Ecossistema de Microserviços",
@@ -69,6 +73,14 @@
       "ezmotoflow": {
         "subtitle": "Sistema de Gestão de Vendas de Motos",
         "description": "Sistema completo de gestão de vendas com autenticação por perfil, controle de estoque e deploy em produção. Design system com Shadcn/UI e Tailwind garantindo consistência visual. API REST com NestJS e PostgreSQL na nuvem, desenvolvido de ponta a ponta."
+      },
+      "minifood": {
+        "subtitle": "Plataforma de Delivery (Microsserviços)",
+        "description": "Plataforma de delivery no estilo iFood construída como monorepo de microsserviços. Cada domínio de negócio (catálogo, pedidos, entrega) roda como serviço independente atrás de um API Gateway Kong, com Keycloak como Identity Provider e RabbitMQ para eventos assíncronos. Serviços NestJS em runtime Bun seguindo Clean Architecture, com PostgreSQL — um database por serviço."
+      },
+      "booktattoo": {
+        "subtitle": "SaaS de Agendamento para Estúdios de Tatuagem",
+        "description": "Micro-SaaS de agendamento para estúdios de tatuagem: cadastro/autenticação de usuários e marcação de horários, oferecido por assinatura mensal. Monorepo com frontend em Next.js e serviços NestJS (usuários, agendamentos) com Prisma e PostgreSQL, e Strapi gerenciando o catálogo de planos."
       },
       "kanban": {
         "subtitle": "Gerenciador de Tarefas",

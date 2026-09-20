@@ -44,6 +44,7 @@ export const projects = [
     github: "https://github.com/oJotagee/Verdeo",
     demo: null,
     featured: true,
+    status: "paused",
   },
   {
     id: 2,
@@ -56,6 +57,26 @@ export const projects = [
   },
   {
     id: 3,
+    key: "booktattoo",
+    name: "BookTattoo",
+    tags: ["Next.js", "NestJS", "Prisma", "PostgreSQL", "Bun", "Strapi", "Biome"],
+    github: "https://github.com/oJotagee/booktattoo",
+    demo: null,
+    featured: false,
+    status: "in-progress",
+  },
+  {
+    id: 4,
+    key: "minifood",
+    name: "MiniFood",
+    tags: ["NestJS", "Bun", "Kong", "Keycloak", "RabbitMQ", "PostgreSQL", "Prisma", "Docker", "Clean Architecture"],
+    github: "https://github.com/oJotagee/MiniFood",
+    demo: null,
+    featured: true,
+    status: "in-progress",
+  },
+  {
+    id: 5,
     key: "kanban",
     name: "Kanban Board",
     tags: ["React", "Tailwind CSS", "NestJS", "Fastify", "PostgreSQL", "Drizzle ORM", "Zod", "Docker"],
@@ -64,7 +85,7 @@ export const projects = [
     featured: false,
   },
   {
-    id: 4,
+    id: 6,
     key: "blogger",
     name: "Blogger",
     tags: ["React", "TypeScript", "Styled Components", "NestJS", "PostgreSQL", "Jest"],

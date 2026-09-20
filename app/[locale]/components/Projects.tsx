@@ -31,11 +31,24 @@ export default function Projects() {
                     {t(`items.${project.key}.subtitle`)}
                   </p>
                 </div>
-                {project.featured && (
-                  <span className="shrink-0 rounded-full border border-orange-500/30 bg-orange-500/10 px-2 py-0.5 text-xs text-orange-400">
-                    {t("featured")}
-                  </span>
-                )}
+                <div className="flex shrink-0 flex-col items-end gap-1.5">
+                  {project.featured && (
+                    <span className="rounded-full border border-orange-500/30 bg-orange-500/10 px-2 py-0.5 text-xs text-orange-400">
+                      {t("featured")}
+                    </span>
+                  )}
+                  {project.status && (
+                    <span
+                      className={`rounded-full border px-2 py-0.5 text-xs ${
+                        project.status === "in-progress"
+                          ? "border-amber-500/30 bg-amber-500/10 text-amber-400"
+                          : "border-zinc-600/40 bg-zinc-500/10 text-zinc-400"
+                      }`}
+                    >
+                      {t(`status.${project.status}`)}
+                    </span>
+                  )}
+                </div>
               </div>
 
               <p className="mb-6 flex-1 text-sm leading-relaxed text-zinc-400">
