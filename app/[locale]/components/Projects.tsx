@@ -42,6 +42,8 @@ export default function Projects() {
                       className={`rounded-full border px-2 py-0.5 text-xs ${
                         project.status === "in-progress"
                           ? "border-amber-500/30 bg-amber-500/10 text-amber-400"
+                          : project.status === "completed"
+                          ? "border-green-500/30 bg-green-500/10 text-green-400"
                           : "border-zinc-600/40 bg-zinc-500/10 text-zinc-400"
                       }`}
                     >

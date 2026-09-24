@@ -63,7 +63,8 @@
     "featured": "destaque",
     "status": {
       "in-progress": "em andamento",
-      "paused": "pausado"
+      "paused": "pausado",
+      "completed": "concluído"
     },
     "items": {
       "verdeo": {

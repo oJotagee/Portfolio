@@ -42,8 +42,8 @@ export const projects = [
     name: "BookTattoo",
     tags: ["Next.js", "NestJS", "Prisma", "PostgreSQL", "Bun", "Strapi", "Biome"],
     github: "https://github.com/oJotagee/booktattoo",
-    demo: null,
-    featured: false,
+    demo: "https://booktattoo.vercel.app",
+    featured: true,
     status: "in-progress",
   },
   {
@@ -63,7 +63,7 @@ export const projects = [
     tags: ["NestJS", "RabbitMQ", "CQRS", "Circuit Breaker", "Hexagonal Architecture", "Testcontainers", "Next.js", "Docker", "PostgreSQL", "Redis"],
     github: "https://github.com/oJotagee/Verdeo",
     demo: null,
-    featured: true,
+    featured: false,
     status: "paused",
   },
   {
@@ -73,7 +73,8 @@ export const projects = [
     tags: ["React", "TypeScript", "Tailwind CSS", "Shadcn/UI", "NestJS", "PostgreSQL", "Vercel"],
     github: "https://github.com/oJotagee/EzMotoFlow",
     demo: "https://ez-moto-flow-8ika.vercel.app",
-    featured: true,
+    featured: false,
+    status: "completed",
   },
   {
     id: 5,
@@ -83,6 +84,7 @@ export const projects = [
     github: "https://github.com/oJotagee/To-do",
     demo: null,
     featured: false,
+    status: "completed",
   },
   {
     id: 6,
@@ -92,6 +94,7 @@ export const projects = [
     github: "https://github.com/oJotagee/blogger",
     demo: null,
     featured: false,
+    status: "completed",
   },
 ];
 

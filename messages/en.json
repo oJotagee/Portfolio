@@ -63,7 +63,8 @@
     "featured": "featured",
     "status": {
       "in-progress": "in progress",
-      "paused": "paused"
+      "paused": "paused",
+      "completed": "completed"
     },
     "items": {
       "verdeo": {
