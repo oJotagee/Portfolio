@@ -9,7 +9,12 @@
   "hero": {
     "greeting": "Hi, I'm",
     "available": "Available for opportunities",
-    "roles": ["React Developer", "Node.js Developer", "TypeScript Developer", "Full Stack Developer"],
+    "roles": [
+      "React Developer",
+      "Node.js Developer",
+      "TypeScript Developer",
+      "Full Stack Developer"
+    ],
     "bio": "Full Stack with 2+ years of experience in NestJS, React and TypeScript. Specialized in hexagonal architecture, CQRS and scalable systems that deliver real value.",
     "cta": "See projects",
     "ctaSecondary": "Get in touch",
@@ -23,9 +28,15 @@
     "title": "Professional experience",
     "current": "CURRENT",
     "items": {
+      "modocorre": {
+        "role": "Full Stack Developer",
+        "period": "Oct/2026 — Present",
+        "location": "Itapetininga, SP",
+        "description": "Migrating applications from Bubble to in-house architectures with React.js, Next.js, NestJS and Node.js, removing the dependency on the no-code platform and giving the team full control over code, data and product evolution. Building pages focused on usability and UI/UX, prioritizing responsiveness and accessibility. Created an internal component library that unifies the visual identity between React dashboards and the screens still running on Bubble. Database modeling with Prisma and Drizzle. Automated tests and CI/CD pipelines with a staging environment, making deploys faster and safer. Using AI coding agents (Claude Code, Cursor) for planning, implementation, testing and code review."
+      },
       "vnova": {
         "role": "Full Stack Developer",
-        "period": "Nov/2025 — Present",
+        "period": "Nov/2025 — Oct/2026",
         "location": "Remote",
         "description": "Building scalable REST APIs with NestJS in hexagonal architecture, applying Clean Architecture and separation of concerns. Implementing CQRS and Domain Events with asynchronous publishing via RabbitMQ, ensuring eventual consistency between services. Full authentication with JWT, guards, roles and granular permissions. Relational modeling with PostgreSQL via Prisma, Redis caching and atomic transactions. Observability with OpenTelemetry propagating correlationId end-to-end. Testing with Vitest, Testing Library, MSW and Playwright E2E with over 80% coverage."
       },
@@ -82,6 +93,10 @@
       "booktattoo": {
         "subtitle": "Tattoo Studio Booking SaaS",
         "description": "Micro-SaaS for tattoo studio scheduling: user registration/authentication and appointment booking, offered as a monthly subscription. Monorepo with Next.js frontend and NestJS services (user, appointment) backed by Prisma and PostgreSQL, with Strapi managing subscription plans."
+      },
+      "lynko": {
+        "subtitle": "Linktree-Style Link Platform",
+        "description": "Platform that gathers all of a person's links on a customizable public page, Linktree-style. Node.js API with Fastify, Drizzle ORM and PostgreSQL, Zod validation and Swagger documentation. Authentication with JWT access tokens and httpOnly-cookie refresh tokens rotated on every use, revocable hashed sessions and timing-attack protection. Security with Helmet, CORS and per-route rate limiting. Next.js frontend in progress."
       },
       "kanban": {
         "subtitle": "Task Manager",
