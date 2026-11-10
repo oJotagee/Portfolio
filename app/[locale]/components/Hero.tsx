@@ -2,7 +2,7 @@
 
 import { TypeAnimation } from "react-type-animation";
 import { useTranslations } from "next-intl";
-import { ChevronDown } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import { profile } from "@/lib/data";
 
 export default function Hero() {
@@ -14,66 +14,74 @@ export default function Hero() {
     sequence.push(role, 2000);
   });
 
+  const meta = [
+    { label: t("years"), value: `${profile.yearsExperience}+` },
+    { label: t("projects"), value: `${profile.projectsDelivered}+` },
+  ];
+
   return (
     <section
       id="home"
-      className="relative flex min-h-screen flex-col justify-center bg-zinc-950 dark:bg-zinc-950 px-6 pt-24 pb-16"
+      className="relative mx-auto flex min-h-screen max-w-6xl flex-col justify-center px-6 pt-28 pb-20"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_0%_50%,rgba(249,115,22,0.08),transparent)]" />
+      <p className="mb-10 flex items-center gap-2 font-mono text-xs tracking-widest text-faint uppercase">
+        <span className="h-1.5 w-1.5 rounded-full bg-ink" />
+        {t("available")}
+      </p>
 
-      <div className="relative z-10 mx-auto w-full max-w-5xl">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-zinc-700 px-4 py-1.5">
-          <span className="h-2 w-2 animate-pulse rounded-full bg-green-400" />
-          <span className="text-xs font-medium tracking-widest text-zinc-400 uppercase">
-            {t("available")}
-          </span>
-        </div>
+      <p className="mb-3 text-lg text-muted">{t("greeting")}</p>
 
-        <p className="mb-2 text-lg text-zinc-400">{t("greeting")}</p>
+      <h1 className="text-6xl leading-[0.95] font-semibold tracking-tighter text-ink sm:text-7xl lg:text-8xl">
+        {profile.name}
+        <br />
+        <span className="text-faint">{profile.lastName}</span>
+      </h1>
 
-        <h1 className="text-6xl font-bold tracking-tight text-white sm:text-7xl lg:text-8xl">
-          {profile.name}
-        </h1>
-        <h1 className="text-6xl font-bold tracking-tight text-zinc-400 sm:text-7xl lg:text-8xl italic">
-          {profile.lastName}
-        </h1>
-
-        <div className="mt-6 flex h-10 items-center gap-3">
-          <span className="text-zinc-600">—</span>
-          <div className="text-xl font-light text-orange-400 sm:text-2xl">
-            <TypeAnimation
-              sequence={sequence}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-            />
-          </div>
-        </div>
-
-        <div className="mt-8 flex flex-wrap gap-4">
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 rounded-full bg-orange-500 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-orange-600"
-          >
-            {t("cta")}
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-zinc-700 px-6 py-3 text-sm font-semibold text-zinc-300 transition-colors hover:border-orange-500 hover:text-white"
-          >
-            {t("ctaSecondary")}
-          </a>
-        </div>
-
-
+      <div className="mt-8 flex h-8 items-center gap-3 font-mono text-base text-ink sm:text-lg">
+        <span className="text-faint">$</span>
+        <TypeAnimation
+          sequence={sequence}
+          wrapper="span"
+          speed={50}
+          repeat={Infinity}
+        />
       </div>
+
+      <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted">{t("bio")}</p>
+
+      <div className="mt-10 flex flex-wrap items-center gap-3">
+        <a
+          href="#projects"
+          className="inline-flex items-center gap-2 rounded-md border border-ink px-4 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-canvas"
+        >
+          {t("cta")}
+          <ArrowRight size={15} />
+        </a>
+        <a
+          href="#contact"
+          className="inline-flex items-center gap-2 rounded-md border border-line-strong px-4 py-2.5 text-sm font-medium text-muted transition-colors hover:border-ink hover:text-ink"
+        >
+          {t("ctaSecondary")}
+        </a>
+      </div>
+
+      <dl className="mt-20 grid max-w-md grid-cols-2 border-t border-line">
+        {meta.map(({ label, value }) => (
+          <div key={label} className="pt-4">
+            <dd className="text-3xl font-semibold tracking-tight text-ink">{value}</dd>
+            <dt className="mt-1 font-mono text-xs tracking-widest text-faint uppercase">
+              {label}
+            </dt>
+          </div>
+        ))}
+      </dl>
 
       <a
         href="#experience"
         aria-label={t("scrollHint")}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-zinc-600 hover:text-orange-400 transition-colors"
+        className="absolute bottom-8 left-1/2 hidden -translate-x-1/2 text-faint transition-colors hover:text-ink sm:block"
       >
-        <ChevronDown size={28} />
+        <ArrowDown size={20} />
       </a>
     </section>
   );

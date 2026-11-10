@@ -1,98 +1,108 @@
 import { useTranslations } from "next-intl";
+import { ArrowUpRight } from "lucide-react";
 import { projects } from "@/lib/data";
-import { ExternalLink, GitFork } from "lucide-react";
+import SectionHeader from "./SectionHeader";
+
+const statusMark: Record<string, string> = {
+  completed: "●",
+  "in-progress": "◐",
+  paused: "○",
+};
+
+function repoPath(url: string) {
+  return url.replace(/^https?:\/\/github\.com\//, "");
+}
+
+function hostPath(url: string) {
+  return url.replace(/^https?:\/\//, "");
+}
 
 export default function Projects() {
   const t = useTranslations("projects");
+  const total = String(projects.length).padStart(2, "0");
 
   return (
-    <section id="projects" className="bg-zinc-900 dark:bg-zinc-900 px-6 py-24">
-      <div className="mx-auto max-w-5xl">
-        <p className="mb-3 text-xs font-semibold tracking-widest text-orange-500 uppercase">
-          {t("label")}
-        </p>
-        <h2 className="mb-4 text-4xl font-bold text-white dark:text-white">
-          {t("title")}
-        </h2>
-        <p className="mb-16 text-zinc-400">{t("subtitle")}</p>
+    <section id="projects" className="mx-auto max-w-6xl scroll-mt-16 px-6 py-24">
+      <SectionHeader
+        index="02"
+        label={t("label")}
+        title={t("title")}
+        description={t("subtitle")}
+      />
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
+      <div>
+        {projects.map((project, i) => {
+          const rows: { label: string; value: string }[] = [
+            {
+              label: "status",
+              value: `${statusMark[project.status] ?? "○"} ${t(`status.${project.status}`)}`,
+            },
+            { label: "stack", value: project.tags.join(" · ") },
+            { label: "repo", value: repoPath(project.github) },
+          ];
+          if (project.demo) rows.push({ label: "demo", value: hostPath(project.demo) });
+
+          return (
             <article
               key={project.id}
-              className="group flex flex-col rounded-2xl border border-zinc-800 bg-zinc-950/50 dark:bg-zinc-950/50 p-6 transition-colors hover:border-orange-500/40"
+              className="grid grid-cols-1 gap-8 border-t border-line py-12 lg:grid-cols-2 lg:gap-16"
             >
-              <div className="mb-4 flex items-start justify-between gap-2">
-                <div>
-                  <h3 className="text-lg font-bold text-white dark:text-white">
-                    {project.name}
-                  </h3>
-                  <p className="text-sm italic text-orange-400">
-                    {t(`items.${project.key}.subtitle`)}
-                  </p>
-                </div>
-                <div className="flex shrink-0 flex-col items-end gap-1.5">
-                  {project.featured && (
-                    <span className="rounded-full border border-orange-500/30 bg-orange-500/10 px-2 py-0.5 text-xs text-orange-400">
-                      {t("featured")}
-                    </span>
-                  )}
-                  {project.status && (
-                    <span
-                      className={`rounded-full border px-2 py-0.5 text-xs ${
-                        project.status === "in-progress"
-                          ? "border-amber-500/30 bg-amber-500/10 text-amber-400"
-                          : project.status === "completed"
-                          ? "border-green-500/30 bg-green-500/10 text-green-400"
-                          : "border-zinc-600/40 bg-zinc-500/10 text-zinc-400"
-                      }`}
-                    >
-                      {t(`status.${project.status}`)}
-                    </span>
-                  )}
-                </div>
-              </div>
+              <div>
+                <h3 className="text-3xl font-semibold tracking-tight text-ink">
+                  {project.name}
+                </h3>
+                <p className="mt-1 text-muted">{t(`items.${project.key}.subtitle`)}</p>
 
-              <p className="mb-6 flex-1 text-sm leading-relaxed text-zinc-400">
-                {t(`items.${project.key}.description`)}
-              </p>
+                <p className="mt-5 max-w-xl text-sm leading-relaxed text-muted">
+                  {t(`items.${project.key}.description`)}
+                </p>
 
-              <div className="mb-4 flex flex-wrap gap-1.5">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-zinc-700/60 px-2.5 py-0.5 text-xs text-zinc-400"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex gap-3 border-t border-zinc-800 pt-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-xs text-zinc-500 transition-colors hover:text-orange-400"
-                >
-                  <GitFork size={13} />
-                  {t("viewCode")}
-                </a>
-                {project.demo && (
+                <div className="mt-7 flex flex-wrap items-center gap-3">
                   <a
-                    href={project.demo}
+                    href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 text-xs text-zinc-500 transition-colors hover:text-orange-400"
+                    className="inline-flex items-center gap-1.5 rounded-md border border-ink px-4 py-2 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-canvas"
                   >
-                    <ExternalLink size={13} />
-                    {t("viewDemo")}
+                    {t("viewCode")}
+                    <ArrowUpRight size={15} />
                   </a>
-                )}
+                  {project.demo && (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-2 py-2 text-sm text-muted transition-colors hover:text-ink"
+                    >
+                      {t("viewDemo")}
+                      <ArrowUpRight size={15} />
+                    </a>
+                  )}
+                </div>
+              </div>
+
+              <div className="self-start rounded-lg border border-line bg-surface font-mono text-sm">
+                <div className="flex items-center justify-between border-b border-line px-4 py-3 text-xs text-faint">
+                  <span>
+                    <span className="text-ink">~/{project.key}</span>
+                    {project.featured && <span> · {t("featured")}</span>}
+                  </span>
+                  <span>
+                    {String(i + 1).padStart(2, "0")}/{total}
+                  </span>
+                </div>
+                <dl className="grid grid-cols-[4rem_1fr] gap-x-4 gap-y-3 px-4 py-4">
+                  {rows.map(({ label, value }) => (
+                    <div key={label} className="col-span-2 grid grid-cols-subgrid">
+                      <dt className="text-faint">{label}</dt>
+                      <dd className="min-w-0 break-words text-ink">{value}</dd>
+                    </div>
+                  ))}
+                </dl>
               </div>
             </article>
-          ))}
-        </div>
+          );
+        })}
       </div>
     </section>
   );

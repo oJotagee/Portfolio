@@ -1,74 +1,50 @@
 import { useTranslations } from "next-intl";
+import { ArrowRight } from "lucide-react";
 import { profile } from "@/lib/data";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
-import { MdOutlineEmail } from "react-icons/md";
+import SectionHeader from "./SectionHeader";
 
 export default function Contact() {
   const t = useTranslations("contact");
 
   const links = [
-    {
-      icon: MdOutlineEmail,
-      label: "Email",
-      value: profile.email,
-      href: `mailto:${profile.email}`,
-    },
-    {
-      icon: FaLinkedinIn,
-      label: "LinkedIn",
-      value: profile.linkedin,
-      href: `https://${profile.linkedin}`,
-    },
-    {
-      icon: FaGithub,
-      label: "GitHub",
-      value: profile.github,
-      href: `https://${profile.github}`,
-    },
+    { icon: FaLinkedinIn, label: "LinkedIn", href: `https://${profile.linkedin}` },
+    { icon: FaGithub, label: "GitHub", href: `https://${profile.github}` },
   ];
 
   return (
-    <section id="contact" className="bg-zinc-900 dark:bg-zinc-900 px-6 py-24">
-      <div className="mx-auto max-w-5xl">
-        <div className="grid grid-cols-1 gap-16 lg:grid-cols-2">
-          <div>
-            <p className="mb-3 text-xs font-semibold tracking-widest text-orange-500 uppercase">
-              {t("label")}
-            </p>
-            <h2 className="mb-6 text-4xl font-bold text-white dark:text-white">
-              {t("title")}
-            </h2>
-            <p className="text-zinc-400">{t("description")}</p>
-          </div>
+    <section id="contact" className="mx-auto max-w-6xl scroll-mt-16 px-6 pt-24 pb-28">
+      <SectionHeader
+        index="04"
+        label={t("label")}
+        title={t("title")}
+        description={t("description")}
+      />
 
-          <div className="flex flex-col gap-4">
-            {links.map(({ icon: Icon, label, value, href }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-4 rounded-xl border border-zinc-800 bg-zinc-950/50 p-4 transition-colors hover:border-orange-500/50"
-              >
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500">
-                  <Icon size={18} />
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="text-xs font-semibold tracking-widest text-zinc-500 uppercase">
-                    {label}
-                  </p>
-                  <p className="truncate text-sm text-zinc-300 group-hover:text-white transition-colors">
-                    {value}
-                  </p>
-                </div>
-                <span className="text-zinc-600 group-hover:text-orange-400 transition-colors">
-                  ↗
-                </span>
-              </a>
-            ))}
-          </div>
-        </div>
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
+        <a
+          href={`mailto:${profile.email}`}
+          className="inline-flex items-center gap-2 rounded-md border border-ink px-4 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-ink hover:text-canvas"
+        >
+          {t("cta")}
+          <ArrowRight size={15} />
+        </a>
+
+        {links.map(({ icon: Icon, label, href }) => (
+          <a
+            key={label}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-ink"
+          >
+            <Icon size={15} aria-hidden />
+            {label}
+          </a>
+        ))}
       </div>
+
+      <p className="mt-8 font-mono text-sm text-faint">{profile.email}</p>
     </section>
   );
 }

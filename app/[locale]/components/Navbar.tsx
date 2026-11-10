@@ -23,10 +23,10 @@ export default function Navbar({ locale }: { locale: string }) {
   const localePath = `/${otherLocale}${withoutLocale}`;
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-zinc-800/60 bg-zinc-950/80 backdrop-blur-md">
-      <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <a href="#home" className="text-sm font-bold tracking-wider text-white">
-          João<span className="text-orange-400">.</span>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-canvas/85 backdrop-blur-md">
+      <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        <a href="#home" className="font-mono text-sm font-semibold tracking-tight text-ink">
+          jg<span className="text-faint">/</span>dev
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
@@ -34,7 +34,7 @@ export default function Navbar({ locale }: { locale: string }) {
             <li key={href}>
               <a
                 href={href}
-                className="text-sm text-zinc-400 transition-colors hover:text-white"
+                className="text-sm text-muted transition-colors hover:text-ink"
               >
                 {label}
               </a>
@@ -45,14 +45,15 @@ export default function Navbar({ locale }: { locale: string }) {
         <div className="flex items-center gap-3">
           <Link
             href={localePath}
-            className="rounded-full border border-zinc-700 px-3 py-1 text-xs font-medium text-zinc-400 transition-colors hover:border-orange-500 hover:text-orange-400"
+            className="rounded-md border border-line-strong px-2.5 py-1 font-mono text-xs text-muted transition-colors hover:border-ink hover:text-ink"
           >
             {otherLocale.toUpperCase()}
           </Link>
           <button
-            className="text-zinc-400 hover:text-white md:hidden"
+            className="text-muted hover:text-ink md:hidden"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
+            aria-expanded={open}
           >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
@@ -60,13 +61,13 @@ export default function Navbar({ locale }: { locale: string }) {
       </nav>
 
       {open && (
-        <div className="border-t border-zinc-800 bg-zinc-950 px-6 py-4 md:hidden">
+        <div className="border-t border-line bg-canvas px-6 py-4 md:hidden">
           <ul className="flex flex-col gap-4">
             {links.map(({ href, label }) => (
               <li key={href}>
                 <a
                   href={href}
-                  className="text-sm text-zinc-400 hover:text-white"
+                  className="text-sm text-muted hover:text-ink"
                   onClick={() => setOpen(false)}
                 >
                   {label}

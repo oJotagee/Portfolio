@@ -33,15 +33,11 @@ export default function AppLoader() {
     <div
       aria-live="polite"
       aria-label="Loading application"
-      className={`fixed inset-0 z-100 flex items-center justify-center bg-zinc-950 transition-opacity duration-400 ${isFading ? "pointer-events-none opacity-0" : "opacity-100"}`}
+      className={`fixed inset-0 z-100 flex items-center justify-center bg-canvas transition-opacity duration-400 ${isFading ? "pointer-events-none opacity-0" : "opacity-100"}`}
     >
-      <div className="flex flex-col items-center gap-4">
-        <div className="relative h-12 w-12">
-          <span className="absolute inset-0 rounded-full border-2 border-zinc-700" />
-          <span className="absolute inset-0 animate-spin rounded-full border-2 border-transparent border-t-orange-500" />
-        </div>
-        <p className="text-xs tracking-[0.28em] text-zinc-400 uppercase">Carregando</p>
-      </div>
+      <p className="font-mono text-sm text-muted">
+        jg/dev<span className="animate-blink ml-0.5 text-ink">_</span>
+      </p>
     </div>
   );
 }
